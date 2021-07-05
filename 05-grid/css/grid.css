@@ -1,0 +1,42 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 1em;
+	
+	display: grid;
+
+	/* 
+		equivalent with grid shorthand: 
+		grid: auto-flow min-content / repeat(12, 1fr); 
+	*/
+	grid-template-columns: repeat(12, 1fr);
+
+	/* this is equal to: grid-template-rows: repeat(6, min-content ); */
+	grid-auto-rows: min-content;
+
+	grid-gap: 1em;
+}
+
+header,
+footer {
+	grid-column: 1 / -1;
+}
+
+aside,
+nav {
+	grid-column: 1 / span 4; /* or 1 / 5 */
+}
+
+main {
+	grid-area: 2 / 5 / span 2 / span 8; /* or 2 / 5 / 4 / 13 */
+	/* grid-column: 5 / span 8; */
+	/* grid-row: 2 / span 2; */
+}
+
+body > img {
+	grid-column: span 3;
+	justify-self: stretch;
+}
